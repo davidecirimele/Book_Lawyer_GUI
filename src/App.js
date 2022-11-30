@@ -6,20 +6,26 @@ import MyAppointment from './pages/MyAppointment';
 import MyProfile from './pages/MyProfile';
 import BookAppt from './pages/BookAppt';
 
+
+
 const App = () =>{
   return (
    
+   
 
-<BrowserRouter>
+ <BrowserRouter>
  <Sidebar>
   <Routes>
+  <Route path="/" element={<MyProfile />} />
     <Route path="/myappt" element={<MyAppointment />} />
     <Route path="/myprofile" element={<MyProfile />} />
     <Route path="/bookappt" element={<BookAppt />} />
     
   </Routes>
   </Sidebar>
-</BrowserRouter>
+  </BrowserRouter> 
+
+
   );
 
 };
