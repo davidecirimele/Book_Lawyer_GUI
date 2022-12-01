@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {AiFillSchedule} from 'react-icons/ai';
-import {FaBars, FaUserAlt} from 'react-icons/fa';
+import {FaBars, FaUserAlt, FaSignOutAlt} from 'react-icons/fa';
 import {CgAdd} from 'react-icons/cg';
 import { NavLink } from 'react-router-dom';
 
@@ -23,9 +23,14 @@ const Sidebar = (props) => {
             icon:<CgAdd/>
         },
         {
-            path:"myappt",
+            path:"/myappt",
             name:"My Appointment",
             icon:<AiFillSchedule/>
+        },
+        {
+            path:"/",
+            name:"Log Out",
+            icon:<FaSignOutAlt/>
         }
        
     ];
