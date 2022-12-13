@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import LawyerPage from "./LawyerPage";
+import { Route } from "react-router";
 
 const BookAppt = () => {
-    return (
-        <div>
-            <h1> Book Appt</h1>
-        </div>
-    );
+  return (
+    <div>
+      <h2 style={{ marginTop: 20 }}> Lawyer Profile</h2>
+    </div>
+  );
 };
 
 export default BookAppt;
