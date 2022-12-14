@@ -18,9 +18,9 @@ const App = () => {
 
   if (
     !token &&
-    location.pathname.includes("/bookappt")
-    // location.pathname !== "/login" &&
-    // !location.pathname.includes("/register")
+    location.pathname !== "/" &&
+    location.pathname !== "/login" &&
+    !location.pathname.includes("/register")
   ) {
     return <Navigate to="/login" replace />;
   }
