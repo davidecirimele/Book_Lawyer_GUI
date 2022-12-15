@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 import { baseUrl } from "../api/baseUrl";
+import { Token } from "@mui/icons-material";
+
 
 const headers = {
   "Content-Type": "application/json"
@@ -31,7 +33,15 @@ const Login = () => {
       sessionStorage.setItem("token", response.data.key);
       sessionStorage.setItem("isLoggedIn", true);
       // you can change the route path
-      navigate("/myprofile");
+      const getToken = await sessionStorage.getItem("token");
+      console.log("hada token")
+      console.log(getToken)
+      if (getToken == "a4a8ec367b83a010b877672e7d8a871ab427be34") 
+      {
+        console.log("IM LAWYERR")
+        navigate("/lawyerpage");
+      }
+      else {navigate("/myprofile");}
     } catch (error) {
       console.log(error);
     }
@@ -45,6 +55,8 @@ const Login = () => {
 
   const btnstyle = { margin: "8px 0px" };
   return (
+  
+
     <div className="login">
       Login to Hire lawyer
       <Card sx={{ maxWidth: 550, marginTop: 5 }} elevation={0} display="flex">
@@ -93,6 +105,7 @@ const Login = () => {
         </div>
       </Card>
     </div>
+  
   );
 };
 

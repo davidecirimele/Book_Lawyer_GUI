@@ -58,12 +58,12 @@ const MyProfile = () => {
   }));
   return (
     <div>
-      <div style={{ marginLeft: 50, marginTop: 20 }}>
+      {/* <div style={{ marginLeft: 50, marginTop: 20 }}>
         <h3>My Profile</h3>
         <h3> Welcome {profile?.username}</h3>
-      </div>
+      </div> */}
       <div className="cardProfile">
-        <Sidebar>
+      <Sidebar>
           <Grid container spacing={2}>
             <Grid xs={6}>
               <Card sx={{ maxWidth: 445 }} className="firstCard">
@@ -103,7 +103,8 @@ const MyProfile = () => {
               </Card>
             </Grid>
           </Grid>
-        </Sidebar>
+          </Sidebar>
+        
       </div>
     </div>
   );

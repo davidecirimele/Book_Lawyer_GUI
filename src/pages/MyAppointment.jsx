@@ -38,15 +38,28 @@ const MyAppointment = () => {
   }, [])
   
 
+	const editAppt = async appt => {
+		try {
+			await axios.put(`http://127.0.0.1:8000/api/v1/appointments/customer/${appt.id}/`, appt,
+       {headers: {
+        authorization: `Token ${getToken()}`
+      }})
+			getAppts()
+		} catch(err) {
+			console.log(err)
+		}
+	}
 
-   
-
-    console.log("data 2")
-    console.log(appts);
-
-
-    
-    
+  const deleteAppt = async id => {
+		try {
+			await axios.delete(`http://127.0.0.1:8000/api/v1/appointments/customer/${id}/`, {headers: {
+        authorization: `Token ${getToken()}`
+      }})
+			getAppts()
+		} catch(err) {
+			console.log(err)
+		}
+	}
 
 
     
@@ -54,13 +67,13 @@ const MyAppointment = () => {
         
       
       <Sidebar>
-      <Container>
+      <Container >
         <Row className='justify-content-center pt-5'>
           <Col>
             <Card className='p-5'>
               <h3>My Appointments</h3>
               {appts.map((appt,index)=>(
-                <Appt title={appt.title}  subject={appt.subject}  date={appt.date} />
+                <Appt id={appt.id} customer={appt.customer} title={appt.title}  subject={appt.subject}  date={appt.date}  deleteAppt={deleteAppt} editAppt={editAppt}/>
 
               ))}
 
@@ -70,6 +83,7 @@ const MyAppointment = () => {
         </Row>
       </Container>
       </Sidebar>
+    
       
     );
 };

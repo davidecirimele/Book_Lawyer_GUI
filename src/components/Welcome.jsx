@@ -4,6 +4,7 @@ import "./welcom.css";
 import { CardMedia, CardContent, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Grid, styled, Paper } from "@mui/material";
+import { Navbar } from "react-bootstrap";
 
 const Welcome = () => {
   const Item = styled(Paper)(({ theme }) => ({
@@ -27,6 +28,7 @@ const Welcome = () => {
   ];
 
   return (
+  
     <div>
       <div style={{ marginLeft: 40 }}>
         <h3> Lawyer page </h3>
@@ -72,6 +74,8 @@ const Welcome = () => {
         </Grid>
       </div>
     </div>
+ 
+    
   );
 };
 

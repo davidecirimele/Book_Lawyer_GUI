@@ -8,7 +8,7 @@ import axios from "axios";
 import { Button, IconButton } from "@mui/material";
 import { baseUrl } from "../api/baseUrl";
 
-const Sidebar = props => {
+const SideBarLaw = props => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -31,20 +31,11 @@ const Sidebar = props => {
   };
 
   const menuItem = [
+
+
     {
-        
-      path: "/myprofile",
-      name: "My Profile",
-      icon: <FaUserAlt />
-    },
-    {
-      path: "/bookappt",
-      name: "Book appointment",
-      icon: <CgAdd />
-    },
-    {
-      path: "/myappt",
-      name: "My Appointment",
+      path: "/lawyerpage",
+      name: "All Appointments",
       icon: <AiFillSchedule />
     }
 
@@ -88,4 +79,4 @@ const Sidebar = props => {
   );
 };
 
-export default Sidebar;
+export default SideBarLaw;

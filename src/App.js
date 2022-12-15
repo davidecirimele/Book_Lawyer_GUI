@@ -24,22 +24,26 @@ const App = () => {
   ) {
     return <Navigate to="/login" replace />;
   }
+  
   return (
     <div>
       {/* <BrowserRouter> */}
-      <Navbar />
+    
+        <Routes>
+                <Route path="/" element={<Welcome />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+        </Routes>
+      
 
-      <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/myappt" element={<MyAppointment />} />
-        <Route path="/myprofile" element={<MyProfile />} />
-
-        <Route path="/bookappt" element={<BookAppt />}>
-          <Route path="lawyerPage" element={<LawyerPage />} />
-        </Route>
-      </Routes>
+  
+          <Routes>
+            <Route path="/myappt" element={<MyAppointment />} />
+            <Route path="/myprofile" element={<MyProfile />} />
+            <Route path="/bookappt" element={<BookAppt />}/>
+            <Route path="/lawyerpage" element={<LawyerPage />} />    
+          </Routes>
+   
       {/* </BrowserRouter> */}
     </div>
   );
